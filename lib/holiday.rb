@@ -84,7 +84,7 @@ holiday_hash.each do |season, holiday|
   puts "#{season.to_s.capitalize}:"
   holiday.each do |event, supply|
      if event.to_s.include?("_")
-        event=event.to_s.gsub("_", " ").split.map(&:capitalize).join(" ")
+        event=event.to_s.gsub("_", " ").split.map {|word| word.capitalize}.join(" ")
       else
         event=event.to_s.capitalize
       end
